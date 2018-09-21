@@ -56,7 +56,7 @@ class Csvfile:
 
 			#print tuple1
 			#print tuple2
-	#Compare number of 
+	#Compare two dataframes
 			if((tuple1[0]==tuple2[0]) and (tuple1[1]==tuple2[1])):
 				if(len(df1.columns.intersection(df2.columns))==tuple1[1]):
 					"""
