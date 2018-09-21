@@ -90,4 +90,18 @@ class Csvfile:
 				self.result.append("FALSE - Size mismatch")
 				
 			print self.result		
+	
+	def writing(self):
+	# Writing result to CSV file
+		with open('result.csv', 'wb') as myfile:
+			wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+
+			wr.writerow(self.c)
+			wr.writerow(self.result)
+		print "Wrote to CSV File!"
+
+obj1=Csvfile()
+obj1.config()
+obj1.Convertdf()
+obj1.writing()
 			
