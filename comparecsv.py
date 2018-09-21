@@ -11,3 +11,12 @@ class Csvfile:
 		self.c=self.c
 		self.result=[]
 		print "came here", self.c
+		
+	#getting options from the section	
+    def ConfigSectionMap(self,section):
+		self.dict1 = {}
+		#self.config=ConfigParser.ConfigParser()
+		self.options = self.config.options(section)
+		print "self. options",self.options
+		print "section",section
+	
