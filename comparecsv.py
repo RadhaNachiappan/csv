@@ -5,7 +5,7 @@ class Csvfile:
 	#edited by radha
 	def config(self):
 		self.config=ConfigParser.ConfigParser()
-		self.location=raw_input("Enter The Location : ")
+	        self.location=raw_input("Enter The Location : ")
 		self.config.read(self.location)
 		self.c=self.config.sections()
 		self.c=self.c
@@ -99,9 +99,9 @@ class Csvfile:
 			wr.writerow(self.c)
 			wr.writerow(self.result)
 		print "Wrote to CSV File!"
-
-obj1=Csvfile()
-obj1.config()
-obj1.Convertdf()
-obj1.writing()
+if __name__=="__main__":
+	obj1=Csvfile()
+	obj1.config()
+	obj1.Convertdf()
+	obj1.writing()
 			
