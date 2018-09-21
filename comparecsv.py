@@ -19,4 +19,16 @@ class Csvfile:
 		self.options = self.config.options(section)
 		print "self. options",self.options
 		print "section",section
-	
+	    
+		#converting option to dictionary
+		
+		for option in self.options:
+			try:
+				self.dict1[option] = self.config.get(section, option)
+				if self.dict1[option] == -1:
+					DebugPrint("skip: %s" % option)
+			except:
+				print("exception on %s!" % option)
+				self.dict1[option] = None
+
+		return self.dict1
