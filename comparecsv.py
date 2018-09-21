@@ -56,4 +56,38 @@ class Csvfile:
 
 			#print tuple1
 			#print tuple2
+	#Compare number of 
+			if((tuple1[0]==tuple2[0]) and (tuple1[1]==tuple2[1])):
+				if(len(df1.columns.intersection(df2.columns))==tuple1[1]):
+					"""
+				#print df1.columns
+				newlis=[]
+				for i in range(len(df1.columns)):
+					newlis.append(df1.columns[i])
+				#print newlis
+				final_df = pd.merge(df1, df2,  how='inner', on =newlis)
+				print final_df
+				if(final_df.shape==df1.shape):
+					result.append("TRUE - Table matched")
+				else:
+					result.append("FALSE - Record missmatch")
+					"""
+					flag=0
+					for k in range(len(df1.index)):
+						for n in range(len(df1.index)):
+							if(df1.iloc[k].equals(df2.iloc[n])==True):
+								flag=flag+1
+								break
+						#print flag
+					if(flag==len(df1.index)):
+						self.result.append("TRUE")
+					else:
+						self.result.append("FALSE - Record mismatch")
+				
+				else:
+					self.result.append("FALSE - Column mismatch")
+			else:
+				self.result.append("FALSE - Size mismatch")
+				
+			print self.result		
 			
