@@ -32,3 +32,28 @@ class Csvfile:
 				self.dict1[option] = None
 
 		return self.dict1
+	#Converting dictionary to dataframe	
+	def Convertdf(self):
+		file1 = {}
+		for i in self.c:	
+
+			file1=self.ConfigSectionMap(i)
+			print file1
+			file2=file1.keys()
+			src_table=pd.read_csv(file1[file2[0]],sep=',')
+			dest_table=pd.read_csv(file1[file2[1]],sep=',')
+			
+			df1= pd.DataFrame(data=src_table)
+			df2= pd.DataFrame(data=dest_table)
+
+			
+			print df1
+			print df2
+
+	#Returns a tuple with number of rows and number of column
+			tuple1=df1.shape
+			tuple2=df2.shape
+
+			#print tuple1
+			#print tuple2
+			
